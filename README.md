@@ -1,4 +1,4 @@
-# yii2-bootstrap-tree v0.0.2 (composer.json: add creocoder/yii2-nested-sets)
+# yii2-bootstrap-tree v0.0.0 (initial commit)
 
 A bootstrap tree for Yii2 (https://github.com/jonmiles/bootstrap-treeview).
 Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget`, `https://github.com/lesha724/yii2-bootstrap-tree`.
