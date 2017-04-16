@@ -16,6 +16,8 @@ use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\web\JsExpression;
+use yii\web\View;
 use yongtiger\bootstraptree\BootstrapTreeAsset;
 
 /**
@@ -32,10 +34,9 @@ class BootstrapTree extends Widget
     public $tag = 'div';
 
     /**
-     * Head element options
-     * @var array
+     * @var array additional HTML attributes that will be rendered in the div tag.
      */
-    public $elementOptions = [];
+    public $htmlOptions = [];
 
     /**
      * Options
@@ -85,11 +86,23 @@ class BootstrapTree extends Widget
     public $nodes = [];
 
     /**
+     * @var array additional options that can be passed to the constructor of the treeview js object.
+     */
+    public $events = [];
+
+    protected $_id;
+
+    /**
      * @inheritdoc
      */
     public function init()
     {
         parent::init();
+
+        if(isset($this->htmlOptions['id']))
+            $this->_id = $this->htmlOptions['id'];
+        else
+            $this->_id = $this->htmlOptions['id'] = $this->getId();
     }
 
     /**
@@ -113,9 +126,26 @@ class BootstrapTree extends Widget
         $view = $this->getView();
         BootstrapTreeAsset::register($view);
         $this->options['data'] = $this->nodes;
-        $options = Json::htmlEncode($this->options);
-        $view->registerJs("$('#{$this->getId()}').treeview($options);");
+
+        // $options = Json::htmlEncode($this->options);
+        $options = $this->_getEventsOptions();
+        $options = $options === [] ? '{}' : Json::encode($options);
+
+        $view->registerJs("$('#{$this->_id}').treeview($options);", View::POS_READY);
         echo $this->renderTree();
+    }
+
+    /**
+     * @return array the javascript options
+     */
+    protected function _getEventsOptions()
+    {
+        $options=$this->options;
+        foreach($this->events as $key=>$event)
+        {
+            $options[$key]=$_function = new JsExpression($event);
+        }
+        return $options;
     }
 
     /**
@@ -124,7 +154,6 @@ class BootstrapTree extends Widget
      */
     private function renderTree()
     {
-        $this->elementOptions['id'] = $this->getId();
-        return Html::tag($this->tag, '', $this->elementOptions);
+        return Html::tag($this->tag, '', $this->htmlOptions);
     }
 }
