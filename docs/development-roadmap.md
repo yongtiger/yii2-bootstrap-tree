@@ -1,5 +1,8 @@
 # Development roadmap
 
+## v0.0.2 (pre-release)
+
+
 ## v0.0.1 (improve: https://github.com/lesha724/yii2-bootstrap-tree/blob/master/TreeView.php)
 
 

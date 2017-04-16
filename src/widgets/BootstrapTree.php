@@ -28,13 +28,13 @@ use yongtiger\bootstraptree\BootstrapTreeAsset;
 class BootstrapTree extends Widget
 {
     /**
-     * Head element tag
+     * Head tag
      * @var string
      */
     public $tag = 'div';
 
     /**
-     * @var array additional HTML attributes that will be rendered in the div tag.
+     * @var array additional HTML attributes that will be rendered in the tag.
      */
     public $htmlOptions = [];
 
@@ -70,26 +70,25 @@ class BootstrapTree extends Widget
      *       showCheckbox: false,
      *       showTags: false,
      *       multiSelect: false,
+     *
+     * @see //https://github.com/jonmiles/bootstrap-treeview#options
      * @var array
      */
-    public $options = [
-    ];
+    public $options = [];
 
     /**
-     * @inheritdoc
+     * @var string
      */
-    public static $autoIdPrefix = 'tree';
-
-    /**
-     * @var TreeNode[]
-     */
-    public $nodes = [];
+    public static $autoIdPrefix = 'treeview_';
 
     /**
      * @var array additional options that can be passed to the constructor of the treeview js object.
      */
     public $events = [];
 
+    /**
+     * @var string
+     */
     protected $_id;
 
     /**
@@ -107,31 +106,18 @@ class BootstrapTree extends Widget
 
     /**
      * @inheritdoc
-     * @throws \Exception
-     */
-    public static function begin($config = [])
-    {
-        $tree = parent::begin($config);
-        if (!($tree->nodes)) {
-            throw new \Exception('Node is not found');
-        }
-        return $tree;
-    }
-
-    /**
-     * @inheritdoc
      */
     public function run()
     {
         $view = $this->getView();
         BootstrapTreeAsset::register($view);
-        $this->options['data'] = $this->nodes;
 
-        // $options = Json::htmlEncode($this->options);
         $options = $this->_getEventsOptions();
+
         $options = $options === [] ? '{}' : Json::encode($options);
 
         $view->registerJs("$('#{$this->_id}').treeview($options);", View::POS_READY);
+
         echo $this->renderTree();
     }
 
@@ -141,15 +127,15 @@ class BootstrapTree extends Widget
     protected function _getEventsOptions()
     {
         $options=$this->options;
-        foreach($this->events as $key=>$event)
+        foreach($this->events as $key => $event)
         {
-            $options[$key]=$_function = new JsExpression($event);
+            $options[$key] = new JsExpression($event);
         }
         return $options;
     }
 
     /**
-     * Render head element
+     * Render head tag
      * @return string
      */
     private function renderTree()

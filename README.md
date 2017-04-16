@@ -1,7 +1,7 @@
-# yii2-bootstrap-tree v0.0.1 (improve: https://github.com/lesha724/yii2-bootstrap-tree/blob/master/TreeView.php)
+# yii2-bootstrap-tree v0.0.2 (pre-release)
 
 A bootstrap tree for Yii2 (https://github.com/jonmiles/bootstrap-treeview).
-Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget`, `https://github.com/lesha724/yii2-bootstrap-tree`.
+Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget` and `https://github.com/lesha724/yii2-bootstrap-tree`.
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-bootstrap-tree/v/stable)](https://packagist.org/packages/yongtiger/yii2-bootstrap-tree)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-bootstrap-tree/downloads)](https://packagist.org/packages/yongtiger/yii2-bootstrap-tree) 
