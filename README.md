@@ -49,33 +49,31 @@ to the require section of your composer.json.
 ```php
 $items = [
     [
-    'id' => 111,
-        'href' => "#node-1",
-        'text' => '<a href="aaa">Node 1</a>',
+        'text' => 'Node 1',
+        'href' => ['site/index', id => 1],  ///Note: href must be route array!
         'icon' => 'glyphicon glyphicon-stop',
         'selectedIcon' => "glyphicon glyphicon-stop",
-        
         'selectable' => true,
         'state' => [
             // 'checked' => true,
             // 'disabled' => true,
             // 'expanded' => true,
-            'selected' => true
+            // 'selected' => true,
         ],
         'tags' => ['available'],
         //...,
-        'nodes'=>
+        'nodes' =>
         [
-            ['text' => 'Node 1.1', 'href' => "#node-1",'class' => 'node-selected',],
-            ['text' => 'Node 1.2', 'href' => "#node-1",]
+            ['text' => 'Node 1.1', 'href' => ['site/index', id => 2]],
+            ['text' => 'Node 1.2', 'href' => ['site/index', id => 3]],
         ]
     ],
     [
         'text' => 'Node 2',
-        'href' => "#node-1",
+        'href' => ['site/index', id => 4],
         'nodes' => [
-            ['text' => 'Node 2.1', 'href' => "#node-1",'class' => 'node-selected',],
-            ['text' => 'Node 2.2', 'href' => "#node-1",]
+            ['text' => 'Node 2.1', 'href' => ['site/index', id => 5]],
+            ['text' => 'Node 2.2', 'href' => ['site/index', id => 6]],
         ]
     ]
 ];
