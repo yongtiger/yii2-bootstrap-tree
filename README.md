@@ -83,7 +83,7 @@ $items = [
 echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
     'options'=>[
         //https://github.com/jonmiles/bootstrap-treeview#options
-        'data' => $menuItems,   ///needed!
+        'data' => $items,   ///needed!
         'enableLinks' => true,  ///optional
         'showTags' => true, ///optional
         'levels' => 3,  ///optional
