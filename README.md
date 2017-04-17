@@ -109,7 +109,7 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 
 - `textTemplate` is same as [yii\widgets\Menu::labelTemplate](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$labelTemplate-detail)
 
-Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>'
+    Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>'
 
 - `encodeTexts` is same as [yii\widgets\Menu::encodeLabels](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$encodeLabels-detail)
 
@@ -117,7 +117,7 @@ Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="
 
 - `selectParents` is same as [yii\widgets\Menu::activateParents](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$activateParents-detail)
 
-Note: when it is true, you must also set `multiSelect` of the treeview widget options to true!
+    Note: when it is true, you must also set `multiSelect` of the treeview widget options to true!
 
 - `hideEmptyNodes` is same as [yii\widgets\Menu::hideEmptyItems](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$hideEmptyItems-detail)
 
