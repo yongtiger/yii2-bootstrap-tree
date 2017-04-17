@@ -62,8 +62,8 @@ $items = [
         ],
         'tags' => ['available'],                            ///(optional)
 
-        visible => true,                                    ///(optional) same as [yii\widgets\Menu::$visible]
-        encode => true,                                     ///(optional) same as [yii\widgets\Menu::$encode]
+        'visible' => true,                                  ///(optional) same as [yii\widgets\Menu::$visible]
+        'encode' => true,                                   ///(optional) same as [yii\widgets\Menu::$encode]
         // ...
         'nodes' =>
         [
@@ -87,16 +87,16 @@ $items = [
 echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
     'options'=>[
         //https://github.com/jonmiles/bootstrap-treeview#options
-        'data' => $items,   ///(needed!)
-        'enableLinks' => true,  ///(optional)
-        'showTags' => true, ///(optional)
-        'levels' => 3,  ///(optional)
+        'data' => $items,                                   ///(needed!)
+        'enableLinks' => true,                              ///(optional)
+        'showTags' => true,                                 ///(optional)
+        'levels' => 3,                                      ///(optional)
         'multiSelect' => true,  ///(optional, but when `selectParents` is true, you must also set this to true!)
     ],
-    'htmlOptions' => [  ///(optional)
+    'htmlOptions' => [                                      ///(optional)
         'id' => 'treeview-tabs',
     ],
-    'events'=>[	///(optional)
+    'events'=>[	                                            ///(optional)
         //https://github.com/jonmiles/bootstrap-treeview#events
         'onNodeSelected'=>'function(event, data) {
             // Your logic goes here
