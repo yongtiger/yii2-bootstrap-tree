@@ -13,7 +13,7 @@ Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget` and `
 
 * for both jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview)
 * automatically displaying selected nodes according to route/params (e.g. `id`) 
-
+![](docs/demo.png)
 
 ## DEPENDENCES
 
