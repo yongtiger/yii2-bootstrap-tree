@@ -49,8 +49,8 @@ to the require section of your composer.json.
 ```php
 $items = [
     [
-        'text' => 'Node 1',
-        'href' => ['site/index', id => 1],                  ///(optional) Note: href must be route array!
+        'text' => 'Node 1',                                 ///(needed!)
+        'href' => ['site/index', id => 1],                  ///(optional) Note: `href` must be route array!
         'icon' => 'glyphicon glyphicon-stop',               ///(optional)
         'selectedIcon' => "glyphicon glyphicon-stop",       ///(optional)
         'selectable' => true,                               ///(optional)
