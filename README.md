@@ -83,13 +83,13 @@ $items = [
 echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
     'options'=>[
         //https://github.com/jonmiles/bootstrap-treeview#options
-        'data' => $items,   ///needed!
-        'enableLinks' => true,  ///optional
-        'showTags' => true, ///optional
-        'levels' => 3,  ///optional
-        'multiSelect' => true,  ///optional
+        'data' => $items,   ///(needed!)
+        'enableLinks' => true,  ///(optional)
+        'showTags' => true, ///(optional)
+        'levels' => 3,  ///(optional)
+        'multiSelect' => true,  ///(optional, but when `selectParents` is true, you must also set this to true!)
     ],
-    'htmlOptions' => [  ///optional
+    'htmlOptions' => [  ///(optional)
         'id' => 'treeview-tabs',
     ],
     'events'=>[	///optional
@@ -99,8 +99,12 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
             alert(data.text);
         }'
     ],
-    ///Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>'
+
+    ///(needed for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>')
     'textTemplate' => '<a href="{href}">{text}</a>',
+
+    ///(optional). Note: when it is true, you must also set `multiSelect` of the treeview widget options to true!
+    'selectParents' => true,
 ]);
 ```
 
