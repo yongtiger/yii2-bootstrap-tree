@@ -1,7 +1,7 @@
 # yii2-bootstrap-tree release version 1.0.0
 
-A bootstrap tree for both jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview).
-Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget` and `https://github.com/lesha724/yii2-bootstrap-tree`.
+A bootstrap tree for `jonmiles bootstrap treeview` BOTH `1.2.0` and `2.0.0` (https://github.com/jonmiles/bootstrap-treeview).
+Forked and improved from [dmitry-suffi/yii-tree-widget](https://github.com/dmitry-suffi/yii-tree-widget) and [lesha724/yii2-bootstrap-tree](https://github.com/lesha724/yii2-bootstrap-tree).
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-bootstrap-tree/v/stable)](https://packagist.org/packages/yongtiger/yii2-bootstrap-tree)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-bootstrap-tree/downloads)](https://packagist.org/packages/yongtiger/yii2-bootstrap-tree) 
@@ -11,13 +11,13 @@ Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget` and `
 
 ## FEATURES
 
-* for both jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview)
+* for `jonmiles bootstrap treeview` BOTH `1.2.0` and `2.0.0` (https://github.com/jonmiles/bootstrap-treeview)
 * automatically displaying selected nodes according to route/params (e.g. `id`) 
 ![](docs/demo.png)
 
 ## DEPENDENCES
 
-* jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview)
+* `jonmiles bootstrap treeview 1.2.0` and `2.0.0` (https://github.com/jonmiles/bootstrap-treeview)
 
 
 ## INSTALLATION   
@@ -44,7 +44,7 @@ to the require section of your composer.json.
 
 ## USAGES
 
-### Example of data.$items structure (https://github.com/jonmiles/bootstrap-treeview#data-structure):
+### Example of `data.$items` structure (https://github.com/jonmiles/bootstrap-treeview#data-structure):
 
 ```php
 $items = [
@@ -113,7 +113,7 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 
 - `textTemplate` is same as [yii\widgets\Menu::labelTemplate](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$labelTemplate-detail)
 
-    Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as `<a href="{href}">{text}</a>`
+    Note: for using `jonmiles bootstrap-treeview 2.0.0`, must specify it as `<a href="{href}">{text}</a>`
 
 - `encodeTexts` is same as [yii\widgets\Menu::encodeLabels](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$encodeLabels-detail)
 
@@ -131,6 +131,8 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 
 
 ## NOTES
+
+* `href` has been obsoleted in `jonmiles bootstrap-treeview 2.0.0`. You can specify `textTemplate` as '<a href="{href}">{text}</a>' in the treeview widget options to generate the url of node. 
 
 
 ## DOCUMENTS
