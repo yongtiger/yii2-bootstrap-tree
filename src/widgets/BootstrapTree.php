@@ -91,11 +91,6 @@ class BootstrapTree extends Widget
     public $events = [];
 
     /**
-     * @var string
-     */
-    protected $_id;
-
-    /**
      * @var bool whether the texts for nodes should be HTML-encoded.
      */
     public $encodeTexts = true;
@@ -139,19 +134,6 @@ class BootstrapTree extends Widget
     /**
      * @inheritdoc
      */
-    public function init()
-    {
-        parent::init();
-
-        if(isset($this->htmlOptions['id']))
-            $this->_id = $this->htmlOptions['id'];
-        else
-            $this->_id = $this->htmlOptions['id'] = $this->getId();
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function run()
     {
         if ($this->route === null && Yii::$app->controller !== null) {
@@ -167,7 +149,8 @@ class BootstrapTree extends Widget
 
         $options = $this->_getEventsOptions();
         $options = $options === [] ? '{}' : Json::encode($options);
-        $view->registerJs("$('#{$this->_id}').treeview($options);", View::POS_READY);
+        $id = ArrayHelper::getValue($this->htmlOptions, 'id', $this->getId());
+        $view->registerJs("$('#{$id}').treeview($options);", View::POS_READY);
 
         echo Html::tag($this->tag, '', $this->htmlOptions);;
     }
