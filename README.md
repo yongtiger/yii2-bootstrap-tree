@@ -92,7 +92,7 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
     'htmlOptions' => [  ///(optional)
         'id' => 'treeview-tabs',
     ],
-    'events'=>[	///optional
+    'events'=>[	///(optional)
         //https://github.com/jonmiles/bootstrap-treeview#events
         'onNodeSelected'=>'function(event, data) {
             // Your logic goes here
@@ -103,7 +103,7 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
     ///(needed for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>')
     'textTemplate' => '<a href="{href}">{text}</a>',
 
-    ///(optional). Note: when it is true, you must also set `multiSelect` of the treeview widget options to true!
+    ///(optional) Note: when it is true, you must also set `multiSelect` of the treeview widget options to true!
     'selectParents' => true,
 ]);
 ```
