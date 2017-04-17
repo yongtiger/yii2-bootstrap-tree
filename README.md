@@ -50,18 +50,21 @@ to the require section of your composer.json.
 $items = [
     [
         'text' => 'Node 1',
-        'href' => ['site/index', id => 1],  ///Note: href must be route array!
-        'icon' => 'glyphicon glyphicon-stop',
-        'selectedIcon' => "glyphicon glyphicon-stop",
-        'selectable' => true,
-        'state' => [
+        'href' => ['site/index', id => 1],                  ///(optional) Note: href must be route array!
+        'icon' => 'glyphicon glyphicon-stop',               ///(optional)
+        'selectedIcon' => "glyphicon glyphicon-stop",       ///(optional)
+        'selectable' => true,                               ///(optional)
+        'state' => [                                        ///(optional)
             // 'checked' => true,
             // 'disabled' => true,
             // 'expanded' => true,
             // 'selected' => true,
         ],
-        'tags' => ['available'],
-        //...,
+        'tags' => ['available'],                            ///(optional)
+
+        visible => true,                                    ///(optional) same as [yii\widgets\Menu::$visible]
+        encode => true,                                     ///(optional) same as [yii\widgets\Menu::$encode]
+        // ...
         'nodes' =>
         [
             ['text' => 'Node 1.1', 'href' => ['site/index', id => 2]],
@@ -75,7 +78,8 @@ $items = [
             ['text' => 'Node 2.1', 'href' => ['site/index', id => 5]],
             ['text' => 'Node 2.2', 'href' => ['site/index', id => 6]],
         ]
-    ]
+    ],
+    // ...
 ];
 ```
 
