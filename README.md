@@ -1,6 +1,6 @@
-# yii2-bootstrap-tree v0.0.2 (pre-release)
+# yii2-bootstrap-tree release version 1.0.0
 
-A bootstrap tree for Yii2 (https://github.com/jonmiles/bootstrap-treeview).
+A bootstrap tree for both jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview).
 Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget` and `https://github.com/lesha724/yii2-bootstrap-tree`.
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-bootstrap-tree/v/stable)](https://packagist.org/packages/yongtiger/yii2-bootstrap-tree)
@@ -11,13 +11,13 @@ Forked and improved from `https://github.com/dmitry-suffi/yii-tree-widget` and `
 
 ## FEATURES
 
-* Sample of extensions directory structure. `src`, `docs`, etc.
-* `README.md`
-* `composer.json`
-* `development-roadmap.md`
+* for both jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview)
+* automatically displaying selected nodes according to route/params (e.g. `id`) 
 
 
 ## DEPENDENCES
+
+* jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview)
 
 
 ## INSTALLATION   
@@ -44,6 +44,79 @@ to the require section of your composer.json.
 
 ## USAGES
 
+### Example of data.$items structure (https://github.com/jonmiles/bootstrap-treeview#data-structure):
+
+```php
+$items = [
+    [
+    'id' => 111,
+        'href' => "#node-1",
+        'text' => '<a href="aaa">Node 1</a>',
+        'icon' => 'glyphicon glyphicon-stop',
+        'selectedIcon' => "glyphicon glyphicon-stop",
+        
+        'selectable' => true,
+        'state' => [
+            // 'checked' => true,
+            // 'disabled' => true,
+            // 'expanded' => true,
+            'selected' => true
+        ],
+        'tags' => ['available'],
+        //...,
+        'nodes'=>
+        [
+            ['text' => 'Node 1.1', 'href' => "#node-1",'class' => 'node-selected',],
+            ['text' => 'Node 1.2', 'href' => "#node-1",]
+        ]
+    ],
+    [
+        'text' => 'Node 2',
+        'href' => "#node-1",
+        'nodes' => [
+            ['text' => 'Node 2.1', 'href' => "#node-1",'class' => 'node-selected',],
+            ['text' => 'Node 2.2', 'href' => "#node-1",]
+        ]
+    ]
+];
+```
+
+```php
+echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
+    'options'=>[
+        //https://github.com/jonmiles/bootstrap-treeview#options
+        'data' => $menuItems,   ///needed!
+        'enableLinks' => true,  ///optional
+        'showTags' => true, ///optional
+        'levels' => 3,  ///optional
+        'multiSelect' => true,  ///optional
+    ],
+    'htmlOptions' => [  ///optional
+        'id' => 'treeview-tabs',
+    ],
+    'events'=>[	///optional
+        //https://github.com/jonmiles/bootstrap-treeview#events
+        'onNodeSelected'=>'function(event, data) {
+            // Your logic goes here
+            alert(data.text);
+        }'
+    ],
+    ///Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>'
+    'textTemplate' => '<a href="{href}">{text}</a>',
+]);
+```
+
+
+### Other usages are just same as [yii\widgets\Menu](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html).
+
+- `textTemplate` is same as [yii\widgets\Menu::labelTemplate](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$labelTemplate-detail)
+- `encodeTexts` is same as [yii\widgets\Menu::encodeLabels](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$encodeLabels-detail)
+- `selectNodes` is same as [yii\widgets\Menu::activateItems](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$activateItems-detail)
+- `selectParents` is same as [yii\widgets\Menu::activateParents](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$activateParents-detail)
+- `hideEmptyNodes` is same as [yii\widgets\Menu::hideEmptyItems](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$hideEmptyItems-detail)
+- `route` is same as [yii\widgets\Menu::route](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$route-detail)
+- `params` is same as [yii\widgets\Menu::params](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$params-detail)
+
 
 ## NOTES
 
@@ -52,6 +125,9 @@ to the require section of your composer.json.
 
 
 ## REFERENCES
+
+- (https://github.com/dmitry-suffi/yii-tree-widget)
+- (https://github.com/lesha724/yii2-bootstrap-tree)
 
 
 ## SEE ALSO
