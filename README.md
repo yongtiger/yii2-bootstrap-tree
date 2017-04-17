@@ -17,7 +17,7 @@ Forked and improved from [dmitry-suffi/yii-tree-widget](https://github.com/dmitr
 
 ## DEPENDENCES
 
-* `jonmiles bootstrap treeview 1.2.0` and `2.0.0` (https://github.com/jonmiles/bootstrap-treeview)
+* `jonmiles bootstrap treeview 1.2.0` or `2.0.0` (https://github.com/jonmiles/bootstrap-treeview)
 
 
 ## INSTALLATION   
