@@ -169,7 +169,7 @@ class BootstrapTree extends Widget
         $options = $options === [] ? '{}' : Json::encode($options);
         $view->registerJs("$('#{$this->_id}').treeview($options);", View::POS_READY);
 
-        echo $this->renderTree();
+        echo Html::tag($this->tag, '', $this->htmlOptions);;
     }
 
     /**+
@@ -183,15 +183,6 @@ class BootstrapTree extends Widget
             $options[$key] = new JsExpression($event);
         }
         return $options;
-    }
-
-    /**
-     * Render head tag
-     * @return string
-     */
-    private function renderTree()
-    {
-        return Html::tag($this->tag, '', $this->htmlOptions);
     }
 
     /**
