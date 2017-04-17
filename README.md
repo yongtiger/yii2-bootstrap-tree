@@ -132,7 +132,7 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 
 ## NOTES
 
-* `href` has been obsoleted in `jonmiles bootstrap-treeview 2.0.0`. You can specify `textTemplate` as '<a href="{href}">{text}</a>' in the treeview widget options to generate the url of node. 
+* `href` has been obsoleted in `jonmiles bootstrap-treeview 2.0.0`. You can specify `textTemplate` as `<a href="{href}">{text}</a>` in the treeview widget options to generate the url of node. 
 
 
 ## DOCUMENTS
