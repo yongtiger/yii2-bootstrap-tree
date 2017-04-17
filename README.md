@@ -108,11 +108,21 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 ### Other usages are just same as [yii\widgets\Menu](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html).
 
 - `textTemplate` is same as [yii\widgets\Menu::labelTemplate](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$labelTemplate-detail)
+
+Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>'
+
 - `encodeTexts` is same as [yii\widgets\Menu::encodeLabels](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$encodeLabels-detail)
+
 - `selectNodes` is same as [yii\widgets\Menu::activateItems](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$activateItems-detail)
+
 - `selectParents` is same as [yii\widgets\Menu::activateParents](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$activateParents-detail)
+
+Note: when it is true, you must also set `multiSelect` of the treeview widget options to true!
+
 - `hideEmptyNodes` is same as [yii\widgets\Menu::hideEmptyItems](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$hideEmptyItems-detail)
+
 - `route` is same as [yii\widgets\Menu::route](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$route-detail)
+
 - `params` is same as [yii\widgets\Menu::params](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$params-detail)
 
 
@@ -124,8 +134,8 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 
 ## REFERENCES
 
-- (https://github.com/dmitry-suffi/yii-tree-widget)
-- (https://github.com/lesha724/yii2-bootstrap-tree)
+- https://github.com/dmitry-suffi/yii-tree-widget
+- https://github.com/lesha724/yii2-bootstrap-tree
 
 
 ## SEE ALSO
