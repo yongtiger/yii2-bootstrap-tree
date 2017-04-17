@@ -1,4 +1,4 @@
-# yii2-bootstrap-tree release version 1.0.1 (CHG# remove `\$this_id`, `init()`)
+# yii2-bootstrap-tree release version 1.0.1 (CHG# remove \$this_id, init())
 
 A bootstrap tree for `jonmiles bootstrap treeview` BOTH `1.2.0` and `2.0.0` (https://github.com/jonmiles/bootstrap-treeview).
 Forked and improved from [dmitry-suffi/yii-tree-widget](https://github.com/dmitry-suffi/yii-tree-widget) and [lesha724/yii2-bootstrap-tree](https://github.com/lesha724/yii2-bootstrap-tree).

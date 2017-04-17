@@ -1,6 +1,6 @@
 # Development roadmap
 
-## release version 1.0.1 (CHG# remove `\$this_id`, `init()`)
+## release version 1.0.1 (CHG# remove \$this_id, init())
 
 
 ## release version 1.0.0 (for both jonmiles bootstrap treeview 1.2.0 and 2.0.0 (https://github.com/jonmiles/bootstrap-treeview))
