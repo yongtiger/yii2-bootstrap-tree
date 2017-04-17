@@ -113,7 +113,7 @@ echo \yongtiger\bootstraptree\widgets\BootstrapTree::widget([
 
 - `textTemplate` is same as [yii\widgets\Menu::labelTemplate](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$labelTemplate-detail)
 
-    Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as '<a href="{href}">{text}</a>'
+    Note: for using jonmiles bootstrap-treeview 2.0.0, must specify it as `<a href="{href}">{text}</a>`
 
 - `encodeTexts` is same as [yii\widgets\Menu::encodeLabels](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html#$encodeLabels-detail)
 
