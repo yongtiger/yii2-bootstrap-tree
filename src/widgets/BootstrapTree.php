@@ -238,7 +238,7 @@ class BootstrapTree extends Widget
             ///Normalize `$nodes[$i]['text']` and `$nodes[$i]['href']` (if set).
             $template = ArrayHelper::getValue($nodes[$i], 'template', $this->textTemplate);
             if (isset($nodes[$i]['href'])) {
-                $nodes[$i]['href'] = Html::encode(Url::to($nodes[$i]['href']));
+                $nodes[$i]['href'] = Url::to($nodes[$i]['href']);
             }
             $nodes[$i]['text'] = strtr($template, [
                 '{href}' => $nodes[$i]['href'],
