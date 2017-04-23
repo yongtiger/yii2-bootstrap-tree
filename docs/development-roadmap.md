@@ -1,5 +1,8 @@
 # Development roadmap
 
+## release version 1.0.2 (typo)
+
+
 ## release version 1.0.1 (CHG# remove \$this_id, init())
 
 
