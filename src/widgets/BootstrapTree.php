@@ -149,10 +149,10 @@ class BootstrapTree extends Widget
 
         $options = $this->_getEventsOptions();
         $options = $options === [] ? '{}' : Json::encode($options);
-        $id = ArrayHelper::getValue($this->htmlOptions, 'id', $this->getId());
+        $id = $this->htmlOptions['id'] = ArrayHelper::getValue($this->htmlOptions, 'id', $this->getId());
         $view->registerJs("$('#{$id}').treeview($options);", View::POS_READY);
 
-        echo Html::tag($this->tag, '', $this->htmlOptions);;
+        return Html::tag($this->tag, '', $this->htmlOptions);
     }
 
     /**+
